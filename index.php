@@ -1,30 +1,11 @@
 <?php
-$dbusername='someuser';
-$db='somedb';
-$dbpassword='password';
-function getdbHandle()
-{
-	global $dbusername,$dbpassword,$db;
- 
-   if (!($link=mysql_connect("localhost",$dbusername,$dbpassword)))
-   {
-      echo "Error connecting to the database server.";
-      exit();
-   }
-   if (!mysql_select_db($db,$link))
-   {
-      echo "Error connecting to the database on the server.";
-      exit();
-   }
-   return $link;
-}
  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Diagnostic Radiology Jeopardy</title>
+<title>Web programming Jeopardy</title>
 <style type="text/css">
 body {
 background-color:#333333;
@@ -149,10 +130,13 @@ text-align:right;
 
 
   function getQuestion($myQuestion) {
+
+    //echo $myQuestion;
+
     $questions = array(
       "cat1100" => ["HTTP Status Not Found", "What is 404"],
-      "cat2100" => ["HTTP Status Not Found", "What is 404"],
-      "cat3100" => ["HTTP Status Not Found", "What is 404"],
+      "cat2100" => ["HTTP Status Created", "What is 200"],
+      "cat3100" => ["HTTP Status Forbidden", "What is 403"],
       "cat4100" => ["HTTP Status Not Found", "What is 404"],
       "cat5100" => ["HTTP Status Not Found", "What is 404"],
 
@@ -178,18 +162,75 @@ text-align:right;
       "cat2500" => ["HTTP Status Not Found", "What is 404"],
       "cat3500" => ["HTTP Status Not Found", "What is 404"],
       "cat4500" => ["HTTP Status Not Found", "What is 404"],
-      "cat5500" => ["HTTP Status Not Found", "What is 200"],
+      "cat5500" => ["HTTP Status Not 5500", "What is 200"],
     );
 
     print_r ($questions[$myQuestion][0]);
   }
 
-  // if (isset($_GET['cat1100'])) {
-  //   getQuestion("cat1100");
-  // }else{
-  //   getQuestion($_GET);
-  // }
-  getQuestion($_GET);
+  function displayQuestion($question){
+    
+  }
+
+  if (isset($_GET['cat1100'])) {
+    getQuestion("cat1100");
+  }else if(isset($_GET['cat2100'])){
+    getQuestion("cat2100");
+  }else if(isset($_GET['cat3100'])){
+    getQuestion("cat3100");
+  }else if(isset($_GET['cat4100'])){
+    getQuestion("cat4100");
+  }else if(isset($_GET['cat5100'])){
+    getQuestion("cat5100");
+  }
+
+  if (isset($_GET['cat1200'])) {
+    getQuestion("cat1200");
+  }else if(isset($_GET['cat2200'])){
+    getQuestion("cat2200");
+  }else if(isset($_GET['cat3200'])){
+    getQuestion("cat3200");
+  }else if(isset($_GET['cat4200'])){
+    getQuestion("cat4200");
+  }else if(isset($_GET['cat5200'])){
+    getQuestion("cat5200");
+  }
+
+  if (isset($_GET['cat1300'])) {
+    getQuestion("cat1300");
+  }else if(isset($_GET['cat2300'])){
+    getQuestion("cat2300");
+  }else if(isset($_GET['cat3300'])){
+    getQuestion("cat3300");
+  }else if(isset($_GET['cat4300'])){
+    getQuestion("cat4300");
+  }else if(isset($_GET['cat5300'])){
+    getQuestion("cat5300");
+  }
+
+  if (isset($_GET['cat1400'])) {
+    getQuestion("cat1400");
+  }else if(isset($_GET['cat2400'])){
+    getQuestion("cat2400");
+  }else if(isset($_GET['cat3400'])){
+    getQuestion("cat3400");
+  }else if(isset($_GET['cat4400'])){
+    getQuestion("cat4400");
+  }else if(isset($_GET['cat5400'])){
+    getQuestion("cat5400");
+  }
+
+  if (isset($_GET['cat1500'])) {
+    getQuestion("cat500");
+  }else if(isset($_GET['cat2500'])){
+    getQuestion("cat2500");
+  }else if(isset($_GET['cat3500'])){
+    getQuestion("cat3500");
+  }else if(isset($_GET['cat4500'])){
+    getQuestion("cat4500");
+  }else if(isset($_GET['cat5500'])){
+    getQuestion("cat5500");
+  }
 ?>
 
 </body>
