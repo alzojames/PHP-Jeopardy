@@ -108,6 +108,8 @@
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'jacdevs';
                   echo 'You have entered a valid use name and password. Please click the Login button again to play the game.';
+                  header("Location: ./PHP_Jeopardy_master/index.php");
+   exit;
                }else {
                   $msg = 'Wrong username or password';
                }
@@ -126,8 +128,8 @@
                required autofocus></br>
             <input type = "password" class = "form-control"
                name = "password" placeholder = "password = 1234" required>
-            <a href="player.php"><button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-               name = "login" onclick="window.location.href = './PHP_Jeopardy_master/index.php';">Login</button></a>
+            <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
+               name = "login">Login</button>
          </form>
 			
          <!-- <a href = "logout.php">Click here to clean Session.</a> -->
