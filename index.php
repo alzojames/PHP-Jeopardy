@@ -1,131 +1,182 @@
 <?php
+session_start();
  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Web programming Jeopardy</title>
-<style type="text/css">
-body {
-background-color:#333333;
-}
-body, table, table td {
-border:0px;
-border-collapse:collapse;
-margin:0px;
-padding:0px;
-}
-a {
-color:#FFFF00;
-}
-#board {
-margin-left:20px;
-color:#FFFF00;
-}
-#board #categories td {
-background-color:#000000;
-background-image:none;
-border:#FFFFFF solid 3px;
-}
-#board tr td{
-background-image:url(boardelementgrad.gif);
-background-repeat:none;
-height:100px;
-width:180px;
-border:#000000 solid 3px;
-border-collapse:collapse;
-text-align:center;
-font-size:24px;
-}
-#container {
-text-align:center;
-padding:20px;
-}
-#score {
-margin-left:20px;
-margin-top:20px;
-background-color:#000000;
-color:#FFFF00;
-}
-#score tr td {
-border:#FFFFFF solid 3px;
-border-collapse:collapse;
-text-align:center;
-font-size:24px;
-height:50px;
-width:180px;
-}
-.team {
-background-color:#000000;
-color:#FFFF00;
-font-size:18px;
-border:none;
-max-width:180px;
-}
-.score {
-background-color:#000000;
-color:#FFFF00;
-font-size:18px;
-border:none;
-max-width:180px;
-text-align:right;
-}
-</style>
-</head>
- 
-<body>
-<div id="container">
-<table id="board">
-  <tr id="categories">
-    <td id="categories1">Cat 1</td>
-    <td id="categories2">Cat 2</td>
-    <td id="categories3">Cat 3</td>
-    <td id="categories4">Cat 4</td>
-    <td id="categories5">cat 5</td>
-  </tr>
-  <tr id="row1">
-    <td id="row1_1"><a href='index.php?cat1100=true'>100</a></td>
-    <td id="row1_2"><a href='index.php?cat2100=true'>100</a></td>
-    <td id="row1_3"><a href='index.php?cat3100=true'>100</a></td>
-    <td id="row1_4"><a href='index.php?cat4100=true'>100</a></td>
-    <td id="row1_5"><a href='index.php?cat5100=true'>100</a></td>
-  </tr>
-  <tr id="row2">
-    <td id="row1_1"><a href='index.php?cat1200=true'>200</a></td>
-    <td id="row1_2"><a href='index.php?cat2200=true'>200</a></td>
-    <td id="row1_3"><a href='index.php?cat3200=true'>200</a></td>
-    <td id="row1_4"><a href='index.php?cat4200=true'>200</a></td>
-    <td id="row1_5"><a href='index.php?cat5200=true'>200</a></td>
-  </tr>
-  <tr id="row3">
-    <td id="row1_1"><a href='index.php?cat1300=true'>300</a></td>
-    <td id="row1_2"><a href='index.php?cat2300=true'>300</a></td>
-    <td id="row1_3"><a href='index.php?cat3300=true'>300</a></td>
-    <td id="row1_4"><a href='index.php?cat4300=true'>300</a></td>
-    <td id="row1_5"><a href='index.php?cat5300=true'>300</a></td>
-  </tr>
-  <tr id="row4">
-    <td id="row1_1"><a href='index.php?cat1400=true'>400</a></td>
-    <td id="row1_2"><a href='index.php?cat2400=true'>400</a></td>
-    <td id="row1_3"><a href='index.php?cat3400=true'>400</a></td>
-    <td id="row1_4"><a href='index.php?cat4400=true'>400</a></td>
-    <td id="row1_5"><a href='index.php?cat5400=true'>400</a></td>
-  </tr>
-  <tr id="row5">
-    <td id="row1_1"><a href='index.php?cat1500=true'>500</a></td>
-    <td id="row1_2"><a href='index.php?cat2500=true'>500</a></td>
-    <td id="row1_3"><a href='index.php?cat3500=true'>500</a></td>
-    <td id="row1_4"><a href='index.php?cat4500=true'>500</a></td>
-    <td id="row1_5"><a href='index.php?cat5500=true'>500</a></td>
-  </tr>
-</table>
-<table id="score">
-<tr><td><input type="text" value="" class="team" /></td><td><input type="text" value="" class="score" id="score1" /></td><td><input type="button" value="+100" class="score" onclick="document.getElementById('score1').value = parseFloat(document.getElementById('score1').value)+100" /><input type="button" value="-100" class="score" onclick="document.getElementById('score1').value = parseFloat(document.getElementById('score1').value)-100"/></td></tr>
-<tr><td><input type="text" value="" class="team" /></td><td><input type="text" value="" class="score" id="score2"/></td><td><input type="button" value="+100" class="score" onclick="document.getElementById('score2').value = parseFloat(document.getElementById('score2').value)+100" /><input type="button" value="-100" class="score" onclick="document.getElementById('score2').value = parseFloat(document.getElementById('score2').value)-100"/></td></tr>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Web programming Jeopardy</title>
+    <style type="text/css">
+    body {
+        background-color: #333333;
+    }
+
+    body,
+    table,
+    table td {
+        border: 0px;
+        border-collapse: collapse;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    a {
+        color: #FFFF00;
+    }
+
+    #board {
+        margin-left: 20px;
+        color: #FFFF00;
+    }
+
+    #board #categories td {
+        background-color: #000000;
+        background-image: none;
+        border: #FFFFFF solid 3px;
+    }
+
+    #board tr td {
+        background-image: url(boardelementgrad.gif);
+        background-repeat: none;
+        height: 100px;
+        width: 180px;
+        border: #000000 solid 3px;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #container {
+        text-align: center;
+        padding: 20px;
+    }
+
+    #score {
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: #000000;
+        color: #FFFF00;
+    }
+
+    #score tr td {
+        border: #FFFFFF solid 3px;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 24px;
+        height: 50px;
+        width: 180px;
+    }
+
+    .team {
+        background-color: #000000;
+        color: #FFFF00;
+        font-size: 18px;
+        border: none;
+        max-width: 180px;
+    }
+
+    .score {
+        background-color: #000000;
+        color: #FFFF00;
+        font-size: 18px;
+        border: none;
+        max-width: 180px;
+        text-align: right;
+    }.cookie{
+      background-color: white;
+      max-width:160px;
+    }
+
+    </style>
+</head>
+<?php $cookie_name = "Jeopardy";
+$cookie_value = "jacdevs";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+
+<body>
+<div class = "cookie">
+      <?php
+  if(!isset($_COOKIE[$cookie_name])) {
+       echo "Cookie named '" . $cookie_name . "' is not set!";
+  } else {
+       echo "Cookie '" . $cookie_name . "' is set!<br>";
+       echo "Value is: " . $_COOKIE[$cookie_name];
+  }
+  ?>
+  
 </div>
-<?php
+    <div id="container">
+        <table id="board">
+            <tr id="categories">
+                <td id="categories1">Cat 1</td>
+                <td id="categories2">Cat 2</td>
+                <td id="categories3">Cat 3</td>
+                <td id="categories4">Cat 4</td>
+                <td id="categories5">cat 5</td>
+            </tr>
+            <tr id="row1">
+                <td id="row1_1"><a href='index.php?cat1100=true'>100</a></td>
+                <td id="row1_2"><a href='index.php?cat2100=true'>100</a></td>
+                <td id="row1_3"><a href='index.php?cat3100=true'>100</a></td>
+                <td id="row1_4"><a href='index.php?cat4100=true'>100</a></td>
+                <td id="row1_5"><a href='index.php?cat5100=true'>100</a></td>
+            </tr>
+            <tr id="row2">
+                <td id="row1_1"><a href='index.php?cat1200=true'>200</a></td>
+                <td id="row1_2"><a href='index.php?cat2200=true'>200</a></td>
+                <td id="row1_3"><a href='index.php?cat3200=true'>200</a></td>
+                <td id="row1_4"><a href='index.php?cat4200=true'>200</a></td>
+                <td id="row1_5"><a href='index.php?cat5200=true'>200</a></td>
+            </tr>
+            <tr id="row3">
+                <td id="row1_1"><a href='index.php?cat1300=true'>300</a></td>
+                <td id="row1_2"><a href='index.php?cat2300=true'>300</a></td>
+                <td id="row1_3"><a href='index.php?cat3300=true'>300</a></td>
+                <td id="row1_4"><a href='index.php?cat4300=true'>300</a></td>
+                <td id="row1_5"><a href='index.php?cat5300=true'>300</a></td>
+            </tr>
+            <tr id="row4">
+                <td id="row1_1"><a href='index.php?cat1400=true'>400</a></td>
+                <td id="row1_2"><a href='index.php?cat2400=true'>400</a></td>
+                <td id="row1_3"><a href='index.php?cat3400=true'>400</a></td>
+                <td id="row1_4"><a href='index.php?cat4400=true'>400</a></td>
+                <td id="row1_5"><a href='index.php?cat5400=true'>400</a></td>
+            </tr>
+            <tr id="row5">
+                <td id="row1_1"><a href='index.php?cat1500=true'>500</a></td>
+                <td id="row1_2"><a href='index.php?cat2500=true'>500</a></td>
+                <td id="row1_3"><a href='index.php?cat3500=true'>500</a></td>
+                <td id="row1_4"><a href='index.php?cat4500=true'>500</a></td>
+                <td id="row1_5"><a href='index.php?cat5500=true'>500</a></td>
+            </tr>
+        </table>
+  <?php
+        $add=100;
+        $sub=100;
+        ?>
+
+        <table id="score">
+            <tr>
+                <td><input type="text" value="" class="team" /></td>
+                <td><input type="text" value="" class="score" id="score1" /></td>
+                <td><input type="button" value="+100" class="score" <?php $add?>>
+                    <input type="button" value="-100" class="score">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="" class="team" /></td>
+                <td><input type="text" value="" class="score" id="score2" /></td>
+                <td><input type="button" value="+100" class="score">
+                    <input type="button" value="-100" class="score">
+                </td>
+            </tr>
+
+    </div>
+    <?php
 
 
 
@@ -234,4 +285,5 @@ text-align:right;
 ?>
 
 </body>
+
 </html>
