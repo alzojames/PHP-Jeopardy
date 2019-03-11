@@ -142,13 +142,50 @@ a:visited{
   .popup{
     width: 70%;
   }
-
+}
+.btn{
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.btn: hover {
+  background: #06D85F;
+}
+.answer {
+  background-color: yellow;
+  padding: 20px;
+  display: none;
+}
+  
+span:hover + .answer {
+  display: block;
 }
 </style>
 </head>
- 
-<body>
 
+<body>
+<?php 
+$cookie_name = "Jeopardy";
+$cookie_value = "jacdevs";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+
+<div class = "cookie">
+      <?php
+  if(!isset($_COOKIE[$cookie_name])) {
+       echo "Cookie named '" . $cookie_name . "' is not set!";
+  } else {
+       echo "Cookie '" . $cookie_name . "' is set!<br>";
+       echo "Value is: " . $_COOKIE[$cookie_name];
+  }
+  ?>
+
+</div>
 
 <div id="container">
 <table id="board">
@@ -240,17 +277,16 @@ $questions = array(
 	<div class="popup">
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-  <?php
-    echo $questions["cat1100"][0];
-  ?>
-  <input type="submit" name="submitbtn" value="Reveal the Answer">
-  <?php
-    // if(isset($_GET['submitbtn'])){
-    //   echo $questions["cat1100"][1];
-    // }
-  ?>
-		</div>
-	</div>
+      <?php
+        echo $questions["cat1100"][0] ."<br>" . "<br>";
+      ?>
+      <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat1100"][1];
+        ?>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="popup2" class="overlay">
@@ -258,8 +294,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat1200"][0];
+    echo $questions["cat1200"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat1200"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -269,8 +310,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat1300"][0];
+    echo $questions["cat1300"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat1300"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -280,8 +326,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat1400"][0];
+    echo $questions["cat1400"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat1400"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -291,8 +342,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat1500"][0];
+    echo $questions["cat1500"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat1500"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -302,8 +358,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat2100"][0];
+    echo $questions["cat2100"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat2100"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -313,8 +374,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat2200"][0];
+    echo $questions["cat2200"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat2200"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -324,8 +390,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat2300"][0];
+    echo $questions["cat2300"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat2300"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -335,8 +406,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat2400"][0];
+    echo $questions["cat2400"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat2400"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -346,8 +422,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat2500"][0];
+    echo $questions["cat2500"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat2500"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -357,8 +438,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat3100"][0];
+    echo $questions["cat3100"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat3100"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -368,8 +454,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat3200"][0];
+    echo $questions["cat3200"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat3200"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -379,8 +470,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat3300"][0];
+    echo $questions["cat3300"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat3300"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -390,8 +486,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat3400"][0];
+    echo $questions["cat3400"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat3400"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -401,8 +502,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat3500"][0];
+    echo $questions["cat3500"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat3500"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -412,8 +518,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat4100"][0];
+    echo $questions["cat4100"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat4100"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -423,8 +534,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat4200"][0];
+    echo $questions["cat4200"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat4200"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -434,8 +550,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat4300"][0];
+    echo $questions["cat4300"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat4300"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -445,8 +566,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat4400"][0];
+    echo $questions["cat4400"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat4400"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -456,8 +582,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat4500"][0];
+    echo $questions["cat4500"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat4500"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -467,8 +598,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat5100"][0];
+    echo $questions["cat5100"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat5100"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -478,8 +614,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat5200"][0];
+    echo $questions["cat5200"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat5200"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -489,8 +630,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat5300"][0];
+    echo $questions["cat5300"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat5300"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -500,8 +646,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat5400"][0];
+    echo $questions["cat5400"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat5400"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>
@@ -511,8 +662,13 @@ $questions = array(
 		<a class="close" href="#">&times;</a>
 		<div class="content">
   <?php
-    echo $questions["cat5500"][0];
+    echo $questions["cat5500"][0] ."<br>" . "<br>";
   ?>
+  <span>Hover over me to reveal the answer!</span>
+      <div class="answer"><?php
+        echo $questions["cat5500"][1];
+        ?>
+      </div>
 		</div>
 	</div>
 </div>

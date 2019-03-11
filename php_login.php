@@ -14,7 +14,7 @@
 <html lang = "en">
    
    <head>
-      <title>JEOPARDY: PHP Edition</title>
+      <title>JEOPARDY: Web Edition</title>
       
       <style>
 
@@ -107,8 +107,7 @@
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'jacdevs';
-                  
-                  echo 'You have entered a valid use name and password';
+                  echo 'You have entered a valid use name and password. Please click the Login button again to play the game.';
                }else {
                   $msg = 'Wrong username or password';
                }
@@ -127,11 +126,11 @@
                required autofocus></br>
             <input type = "password" class = "form-control"
                name = "password" placeholder = "password = 1234" required>
-            <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-               name = "login">Login</button>
+            <a href="player.php"><button class = "btn btn-lg btn-primary btn-block" type = "submit" 
+               name = "login" onclick="window.location.href = './PHP_Jeopardy_master/index.php';">Login</button></a>
          </form>
 			
-         <a href = "logout.php">Click here to clean Session.</a>
+         <!-- <a href = "logout.php">Click here to clean Session.</a> -->
          
       </div> 
       
