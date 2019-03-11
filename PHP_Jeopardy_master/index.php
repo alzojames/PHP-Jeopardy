@@ -243,7 +243,7 @@ $questions = array(
   <?php
     echo $questions["cat1100"][0];
   ?>
-  <input type="submit" name="submitbtn" value="Reveal Answer">
+  <input type="submit" name="submitbtn" value="Reveal the Answer">
   <?php
     // if(isset($_GET['submitbtn'])){
     //   echo $questions["cat1100"][1];
